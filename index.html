@@ -1,0 +1,14 @@
+<video id="video" autoplay playsinline></video>
+<canvas id="canvas" style="display: none;"></canvas>
+<div id="blur-result"></div>
+
+<script>
+  const video = document.getElementById('video');
+
+  // Access the user's webcam
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then((stream) => {
+      video.srcObject = stream;
+    })
+    .catch((err) => console.error("Error accessing webcam: ", err));
+</script>
